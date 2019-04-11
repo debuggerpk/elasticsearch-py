@@ -162,7 +162,7 @@ def streaming_bulk(
     client,
     actions,
     chunk_size=500,
-    max_chunk_bytes=100 * 1024 * 1024,
+    max_chunk_bytes=9 * 1024 * 1024, # temporary hack
     raise_on_error=True,
     expand_action_callback=expand_action,
     raise_on_exception=True,
