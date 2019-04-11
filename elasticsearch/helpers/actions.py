@@ -132,9 +132,9 @@ def _process_bulk_chunk(client, bulk_actions, bulk_data, raise_on_exception=True
         raise BulkIndexError('%i document(s) failed to index.' % len(errors), errors)
 
 
-def streaming_bulk(client, actions, chunk_size=500, max_chunk_bytes=100 * 1024 * 1024,
+def streaming_bulk(client, actions, chunk_size=100, max_chunk_bytes=8 * 1024 * 1024,
                    raise_on_error=True, expand_action_callback=expand_action,
-                   raise_on_exception=True, max_retries=0, initial_backoff=2,
+                   raise_on_exception=True, max_retries=2, initial_backoff=2,
                    max_backoff=600, yield_ok=True, *args, **kwargs):
 
     """
